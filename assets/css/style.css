@@ -2712,3 +2712,6 @@ border-radius:32px 32px 0 0 ;
     color:#c5c5ca;
     text-decoration: none;
 }
+.footer-text svg{
+    transform: translateY(3px);
+}

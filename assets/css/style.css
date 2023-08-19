@@ -965,6 +965,7 @@ border-radius: 7px;
 }
 .box:hover{
     background-color:#0ef0ad;
+    cursor: pointer;
 }
 .box:hover svg{
     color: black;
@@ -1045,7 +1046,7 @@ top: 70px;
     justify-content: center;
     transition: all .7s ease;
 }
-.boxes1:hover,.boxes2:hover,.boxes3:hover .box-button{
+.boxes1:hover .box-button,.boxes2:hover .box-button,.boxes3:hover .box-button{
     opacity: 1;
     cursor: pointer;
   
@@ -1222,6 +1223,7 @@ background-color: #404250;
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 75%, 0 100%);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 75%, 0 100%);
     right: 28px;
+    z-index: 2;
 }
 .boxes-container2{
         position: relative;
@@ -1395,6 +1397,7 @@ margin-top: 20px;
 }
 .s5-boxes:hover{
     background-color:#303141;
+    cursor: pointer;
 }
 .s5-boxes h1{
     font-family: 'Chakra Petch', sans-serif;

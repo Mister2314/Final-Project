@@ -652,7 +652,12 @@ object-fit:contain ;
     color: #c5c5ca;
     font-family: 'Inter', sans-serif;
 }
-.text-container button{
+.animation-button-box{
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+}
+.animation-button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -662,8 +667,8 @@ object-fit:contain ;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    width: 200px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     border: none;
     background-color: #0ef0ad;
 border-radius: 16px;
@@ -1709,15 +1714,20 @@ text-align:center;
     height: 10vh;
     background-color: yellowgreen;
 }
-.s7-lasttext button{
+.s7-lasttext-button{
+    width: 220px;
+    height: 50px;
     margin-top: 35px;
+    background-color: transparent;
+}
+.s7-lasttext-button button{
     outline: none;
     color: #222434;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    width: 220px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     border: none;
     background-color: #0ef0ad;
 border-radius: 16px;
@@ -2357,6 +2367,7 @@ color: #4c4d5a;
     background-color: transparent;
     outline: none;
     display: block;
+    resize: none;
 }
 .form4 textarea::placeholder{
     font-size: 16px;
@@ -2589,8 +2600,15 @@ background-color: transparent;
 font-size: 16px;
 color: #4c4d5a;
 }
-.button4{
+.button4-box{
     position: absolute;
+    width: 165px;
+    height: 50px;
+    background-color: transparent;
+    right: 50px;
+    top: 255px;
+}
+.button4{
     outline: none;
     color: black;
     font-family: 'Inter', sans-serif;

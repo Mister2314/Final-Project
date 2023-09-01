@@ -84,55 +84,64 @@ button.addEventListener('click', () => {
     });
 });
 
-// // // script.js
-// document.addEventListener("DOMContentLoaded", function () {
-//   const loadingScreen = document.querySelector(".loading-screen-container");
+function startCounting(targetElement, targetValue, suffix) {
+  const element = document.getElementById(targetElement);
+  const initialValue = parseInt(element.textContent, 10);
+  const step = Math.ceil(targetValue / 100);
+
+  let current = 0;
+  const interval = setInterval(() => {
+    if (current <= targetValue) {
+      element.textContent = current.toLocaleString() + suffix;
+      current += step;
+    } else {
+      element.textContent = targetValue.toLocaleString() + suffix;
+      clearInterval(interval);
+    }
+  }, 10);
+}
+
+window.addEventListener('load', () => {
+  const sectionElement = document.querySelector('.section5');
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const targetElement = entry.target.querySelector('h1');
+        const targetValue = parseInt(targetElement.textContent.replace(/\D/g, ''));
+
+        if (targetElement.id === 'count1' || targetElement.id === 'count3') {
+          startCounting(targetElement.id, targetValue, '+');
+        } else if (targetElement.id === 'count2' || targetElement.id === 'count4') {
+          startCounting(targetElement.id, targetValue, 'K');
+        }
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  const h1Elements = sectionElement.querySelectorAll('h1');
+  h1Elements.forEach((h1) => {
+    observer.observe(h1.parentElement);
+  });
+});
+
+function SendMail() {
+  var params = {
+      name_id : document.getElementById("name_id").value,
+      email_id : document.getElementById("email_id").value,
+      subject : document.getElementById("subject").value,
+      message : document.getElementById("message").value,
   
-//   // Yükleme ekranını 3 saniye sonra gizle
-//   const displayDuration = 3000; // 3000 milisaniye (3 saniye)
-  
-//   setTimeout(function () {
-//       loadingScreen.style.opacity = "0";
-//   }, displayDuration);
-
-// });
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const loadingScreen = document.querySelector(".loading-screen-container");
-//   const body = document.querySelector("body");
-
-//   // Yükleme ekranını 3 saniye sonra gizle
-//   const displayDuration = 3000; // 3000 milisaniye (3 saniye)
-
-//   setTimeout(function () {
-//     loadingScreen.style.opacity = "0";
-
-//     // Sayfa kaydırılabilirliğini geri aç
-//     body.style.overflow = "visible";
-//   }, displayDuration);
-
-//   // Sayfa yüklenirken kaydırılabilirliğini kapat
-//   body.style.overflow = "hidden";
-// });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const loadingScreen = document.querySelector(".loading-screen-container");
-//   const contentSection = document.querySelector(".content");
-
-//   // Yükleme ekranını görüntüle
-//   loadingScreen.style.opacity = "1";
-
-//   // Sayfa yüklendikten sonra yükleme ekranını gizle ve içeriği görüntüle
-//   window.addEventListener("load", function () {
-//     loadingScreen.style.opacity = "0";
-//     contentSection.style.visibility = "visible"; // İçeriği görüntüle
-//   });
-
-//   // Sayfa yenilendiğinde yükleme ekranını tekrar görüntüle ve içeriği gizle
-//   window.addEventListener("beforeunload", function () {
-//     loadingScreen.style.opacity = "1";
-//     contentSection.style.visibility = "hidden"; // İçeriği gizle
-//   });
-// });
-
+  }
+  emailjs.send("service_2gz7a1z", "template_vwf7v3v", params).then(function (res) {
+      alert("Success!" + res.status)
+      location.reload()
+  })
+  }

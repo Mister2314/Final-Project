@@ -7,6 +7,13 @@
 body{
     background-color: #161829;
 }
+.typewrite{
+    cursor: default;
+}
+::selection{
+    background-color:#0ef0ad ;
+    color: white;
+}
 .click-top {
     width: 140px;
     height: 56px;
@@ -828,6 +835,7 @@ background-color: white;
 }
 .boxes2pspan{
     color: #10E0A4;
+    cursor: pointer;
 }
 .paragraph1{
     font-family: 'Inter', sans-serif;
@@ -1043,7 +1051,7 @@ top: 70px;
     border-radius: 100%;
     color: black;
     display: flex;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 26px;
     font-weight: 500;
      font-family: 'Chakra Petch', sans-serif;
@@ -1390,7 +1398,7 @@ margin-top: 20px;
     height: 22vh;
     background-color: #161829;
 }
-.s5-boxes{
+.s5-boxes {
     position: relative;
     display: flex;
     align-items: center;
@@ -1398,25 +1406,28 @@ margin-top: 20px;
     width: 24%;
     height: 22vh;
     background-color: #161829;
-    transition: all .7s ease;
-}
-.s5-boxes:hover{
-    background-color:#303141;
+    transition: background-color 0.7s ease;
+  }
+  
+  .s5-boxes:hover {
+    background-color: #303141;
     cursor: pointer;
-}
-.s5-boxes h1{
+  }
+  
+  .s5-boxes h1 {
     font-family: 'Chakra Petch', sans-serif;
-    color:#222434;
+    color: #222434;
     font-size: 80px;
-}
-.s5-boxes p{
+  }
+  
+  .s5-boxes p {
     position: absolute;
     text-transform: capitalize;
     font-size: 19px;
     color: white;
     font-weight: 400;
     font-family: 'Inter', sans-serif;
-}
+  }
 
 .section6{
     padding: 20px 0 0 50px;
@@ -1481,8 +1492,12 @@ margin: 30px 10px 0 0;
     border-radius: 8px;
     width: 21%;
     height: 62vh;
-  margin: 5px 20px 0 0;
+    margin: 5px 20px 0 0;
     background-color: #222434;
+    transition: all .3s ease;
+}
+.s6-div2-boxes:hover{
+    background-color: #2a2d41;
 }
 .icon-box{
     display: flex;
@@ -1498,7 +1513,7 @@ margin: 30px 10px 0 0;
 .icon-box-container{
     width: 100%;
     height: 55vh;
-    background-color: #222434;
+    background-color: transparent;
    margin: 20px 0px;
 }
 .icon-box-texts h3{
@@ -1512,7 +1527,7 @@ margin: 30px 10px 0 0;
     padding-left: 30px;
     width: 100%;
     height: 30vh;
-    background-color: #222434;
+    background-color: transparent;
 }
 .icon-box-texts p{
     padding-top: 10px;
@@ -1529,7 +1544,7 @@ margin: 30px 10px 0 0;
     margin: 25px 0 0 10px;
     width: 50%;
     height: 5vh;
-    background-color:#222434;
+    background-color:transparent;
 }
 .icon-box-hovertext svg{
     color: #0ef0ad;
@@ -2319,8 +2334,8 @@ border: 1px solid #404250;
 }
 .button-box{
     padding-left: 10px;
-    width: 100%;
-    height: 10vh;
+    width: 38%;
+    height: 7vh;
     background-color: transparent;
 
 }
@@ -2420,7 +2435,6 @@ transition: all .4s ease;
     width: 25%;
     height: 10vh;
     background-color: violet;
-   margin-right: 0.3px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -2429,12 +2443,15 @@ transition: all .4s ease;
    border-bottom: 1px solid #303141;
    border-top: 1px solid #303141;
    background-color: #303141;
-    
+    transition: all .3s ease;
 }
 .s12-boxes svg{
     color:#c5c5ca;
     padding-right: 5px;
     transition: color .40s ease;
+}
+.s12-boxes:hover{
+    background-color: #37384a; ;
 }
 .s12-boxes:hover svg,.s12-boxes:hover p{
     color: white;
@@ -2452,7 +2469,7 @@ transition: all .4s ease;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 82vh;
+    height: 83vh;
     background-color: blue;
     position: relative;
 }
@@ -2462,7 +2479,7 @@ transition: all .4s ease;
     justify-content: center;
     align-items: center;
     width: 50%;
-    height:82vh;
+    height:83vh;
     background-image:url('../img/Screenshot\ 2023-08-17\ 230423.png' ) ;
     background-repeat:no-repeat;
     background-size: cover;
@@ -2686,5 +2703,5 @@ border-radius:32px 32px 0 0 ;
     text-decoration: none;
 }
 .footer-text svg{
-    transform: translateY(3px);
+    transform: translateY(6px);
 }

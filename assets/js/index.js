@@ -59,17 +59,15 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #0ef0ad}";
     document.body.appendChild(css);
 };
-// index.js dosyası
 
 const button = document.querySelector('.click-top');
-const sectionToAppear = document.querySelector('.section2'); // Bölümün sınıfını buraya ekleyin
+const sectionToAppear = document.querySelector('.section2'); // 
 
-button.style.opacity = '0'; // Butonu başlangıçta görünmez yap
+button.style.opacity = '0'; 
 
 window.addEventListener('scroll', () => {
     const sectionTop = sectionToAppear.getBoundingClientRect().top;
     
-    // Bölüm görünür hale geldiğinde butonun opacity'sini artır
     if (sectionTop <= window.innerHeight / 2) {
         button.style.opacity = '1';
     } else {

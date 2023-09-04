@@ -143,3 +143,82 @@ function SendMail() {
       location.reload()
   })
   }
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      incrementCounter();
+      observer.unobserve(entry.target); 
+    }
+  });
+}, {
+  threshold: 0.5 
+});
+
+
+const targetElement = document.querySelector('.border-box-border');
+observer.observe(targetElement);
+
+
+function incrementCounter() {
+  const counterElement = document.getElementById('counter');
+  let counterValue = 0;
+  const targetValue = 20;
+
+  const intervalId = setInterval(() => {
+    if (counterValue < targetValue) {
+      counterValue++;
+      counterElement.textContent = `${counterValue}+`;
+    } else {
+      clearInterval(intervalId); 
+    }
+  }, 100); 
+}
+
+var isNameChanged = false;
+var isEmailChanged = false;
+var isSubjectChanged = false;
+var isMessageChanged = false;
+
+
+function checkInput(inputID) {
+    var inputValue = document.getElementById(inputID).value;
+
+  
+    if (inputValue) {
+        switch (inputID) {
+            case "name_id":
+                isNameChanged = true;
+                break;
+            case "email_id":
+                isEmailChanged = true;
+                break;
+            case "subject":
+                isSubjectChanged = true;
+                break;
+            case "message":
+                isMessageChanged = true;
+                break;
+        }
+    } else {
+        switch (inputID) {
+            case "name_id":
+                isNameChanged = false;
+                break;
+            case "email_id":
+                isEmailChanged = false;
+                break;
+            case "subject":
+                isSubjectChanged = false;
+                break;
+            case "message":
+                isMessageChanged = false;
+                break;
+        }
+    }
+}
+
+window.onbeforeunload = function () {
+    if (isNameChanged || isEmailChanged || isSubjectChanged || isMessageChanged) {
+        return "Bu sayfadan ayrılmak istediğinize emin misiniz?";
+    }
+};

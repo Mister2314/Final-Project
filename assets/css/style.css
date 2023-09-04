@@ -1,4 +1,4 @@
- *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -2283,9 +2283,12 @@ margin-left: 20px;
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-    width: 35%;
+    width: 50%;
     height: 8vh;
     background-color:transparent;
+}
+.lets-talk{
+    text-decoration: none;
 }
 .iconboxes-1-1{
     display: flex;

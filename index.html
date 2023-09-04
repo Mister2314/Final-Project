@@ -51,7 +51,7 @@
             d="M176 16H80a24 24 0 0 0-24 24v176a24 24 0 0 0 24 24h96a24 24 0 0 0 24-24V40a24 24 0 0 0-24-24ZM72 64h112v128H72Zm8-32h96a8 8 0 0 1 8 8v8H72v-8a8 8 0 0 1 8-8Zm96 192H80a8 8 0 0 1-8-8v-8h112v8a8 8 0 0 1-8 8Z"
           />
         </svg>
-        <p>(302) 555-0107</p>
+        <p>(050) 703-2186</p>
       </div>
 
       <ul class="headerul">
@@ -352,12 +352,15 @@
     <section class="section2">
       <div class="section2-container">
         <div class="section2-left-box">
-<img data-aos="zoom-out-down" src="./assets/img/about-block-bg.png" alt="">
-<div data-aos="fade-up" class="border-box-border">
-<div class="border-box"><h1>20+</h1>
-  <div class="border-box-text"><p>Years Of Experience</p></div>
-</div>
-</div>     
+<img src="./assets/img/about-block-bg.png" alt="">
+<div data-aos="fade-down" class="border-box-border">
+  <div class="border-box">
+    <h1 id="counter">0+</h1>
+    <div class="border-box-text">
+      <p>Years Of Experience</p>
+    </div>
+  </div>
+</div> 
         </div>
         
         <div  class="section2-right-box">
@@ -1093,13 +1096,14 @@
     <div class="iconboxes-1-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="#0ef0ad" d="M19.95 21q-3.125 0-6.175-1.363t-5.55-3.862q-2.5-2.5-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.338t.712-.062l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3ZM6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9Zm8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475l-1.675 1.675ZM6.025 9Zm8.95 8.95Z"/></svg>
     </div>
-    <p>+(2) 578 - 365 - 379</p>
+    <a class="lets-talk" href="https://wa.me/994507032186">
+    <p>(050) 703 -21 - 86</p></a>
   </div>
   <div data-aos="fade-up" class="s11-iconboxes-1">
     <div class="iconboxes-1-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 32 32"><path fill="none" stroke="#0ef0ad" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M29 9v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9m26 0a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2m26 0l-11.862 8.212a2 2 0 0 1-2.276 0L3 9"/></svg>
     </div>
-<p>Hello@example.com</p>
+<p>xeyalhuseynli06@gmail.com</p>
   </div>
 </div>
 
@@ -1110,19 +1114,19 @@
       <div class="form-box">
 <div data-aos="fade-up" class="form1">
   <label> Name</label><br>
-  <input id="name_id" type="text" placeholder="Enter Your Name" required>
+  <input id="name_id" oninput="checkInput('name_id')" type="text" placeholder="Enter Your Name" required>
 </div>
 <div data-aos="fade-up" class="form1">
   <label>Email</label><br>
-  <input id="email_id" type="email" placeholder="Enter Your Email" required>
+  <input id="email_id" oninput="checkInput('email_id')"  type="email" placeholder="Enter Your Email" required>
 </div>
 <div data-aos="fade-up" class="form1">
   <label>Subject</label><br>
-  <input id="subject" type="text" placeholder="Enter Subject" required>
+  <input id="subject" oninput="checkInput('subject')" type="text" placeholder="Enter Subject" required>
 </div>
 <div data-aos="fade-up" class="form4">
   <label>Leave us a message</label><br>
-  <textarea id="message" type="text" placeholder="Please Type Your Message Here" required></textarea >
+  <textarea id="message" type="text" placeholder="Please Type Your Message Here"  required oninput="checkInput('message')"></textarea >
 </div>
 <div data-aos="zoom-out" class="button-box">
   <button onclick="SendMail()" class="button3">Send Message</button>

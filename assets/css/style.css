@@ -2708,3 +2708,30 @@ border-radius:32px 32px 0 0 ;
 .footer-text svg{
     transform: translateY(6px);
 }
+.form-status{
+    min-height: 24px;
+    padding: 10px 10px 0 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #c5c5ca;
+}
+.form-status.success{
+    color: #0ef0ad;
+}
+.form-status.error{
+    color: #ff6b6b;
+}
+.newsletter-status{
+    width: 92%;
+    padding: 12px 190px 0 20px;
+}
+.button3:disabled, .button4:disabled{
+    opacity: .55;
+    cursor: default;
+}
+.button3:disabled:hover, .button4:disabled:hover{
+    background-color: #0ef0ad;
+    border: none;
+    color: black;
+}

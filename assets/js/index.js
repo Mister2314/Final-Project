@@ -82,6 +82,16 @@ button.addEventListener('click', () => {
     });
 });
 
+document.querySelectorAll('[data-scroll-to]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const target = document.querySelector(btn.getAttribute('data-scroll-to'));
+    if (!target) return;
+    const headerOffset = document.querySelector('header').offsetHeight || 0;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+  });
+});
+
 function startCounting(targetElement, targetValue, suffix) {
   const element = document.getElementById(targetElement);
   const initialValue = parseInt(element.textContent, 10);
@@ -130,19 +140,90 @@ window.addEventListener('load', () => {
   });
 });
 
-function SendMail() {
+function SendMail(event) {
+  event.preventDefault();
+  var form = document.getElementById("contact-form");
+  var status = document.getElementById("contact-status");
+  var submitButton = form.querySelector(".button3");
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
   var params = {
-      name_id : document.getElementById("name_id").value,
-      email_id : document.getElementById("email_id").value,
-      subject : document.getElementById("subject").value,
-      message : document.getElementById("message").value,
-  
+    name_id: document.getElementById("name_id").value.trim(),
+    email_id: document.getElementById("email_id").value.trim(),
+    subject: document.getElementById("subject").value.trim(),
+    message: document.getElementById("message").value.trim(),
+  };
+  var formFieldIds = ["name_id", "email_id", "subject", "message"];
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending...";
+  setFormStatus(status, "", "");
+
+  emailjs.send("service_2gz7a1z", "template_vwf7v3v", params).then(function () {
+    setFormStatus(status, "success", "Thanks! Your message has been sent. We'll get back to you soon.");
+    form.reset();
+    formFieldIds.forEach(checkInput);
+  }).catch(function (error) {
+    console.error("EmailJS send failed:", error);
+    setFormStatus(status, "error", "Sorry, something went wrong. Please try again in a moment.");
+  }).finally(function () {
+    submitButton.disabled = false;
+    submitButton.textContent = "Send Message";
+  });
+}
+
+function SubscribeNewsletter(event) {
+  event.preventDefault();
+  var form = document.getElementById("newsletter-form");
+  var emailInput = document.getElementById("newsletter_email");
+  var status = document.getElementById("newsletter-status");
+  var submitButton = form.querySelector(".button4");
+  var email = emailInput.value.trim();
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
   }
-  emailjs.send("service_2gz7a1z", "template_vwf7v3v", params).then(function (res) {
-      alert("Success!" + res.status)
-      location.reload()
-  })
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Subscribing...";
+  setFormStatus(status, "", "");
+
+  emailjs.send("service_2gz7a1z", "template_vwf7v3v", {
+    name_id: "Newsletter subscriber",
+    email_id: email,
+    subject: "Newsletter subscription",
+    message: "Please add " + email + " to the Gamestorm newsletter mailing list."
+  }).then(function () {
+    setFormStatus(status, "success", "You're subscribed! Welcome to the Gamestorm community.");
+    form.reset();
+  }).catch(function (error) {
+    console.error("Newsletter signup failed:", error);
+    setFormStatus(status, "error", "Sorry, we couldn't subscribe you right now. Please try again.");
+  }).finally(function () {
+    submitButton.disabled = false;
+    submitButton.textContent = "Subscribe";
+  });
+}
+
+function setFormStatus(status, kind, message) {
+  status.classList.remove("success", "error");
+  if (kind) {
+    status.classList.add(kind);
   }
+  status.textContent = message;
+}
+
+document.getElementById('newsletter_email').addEventListener('input', function () {
+  setFormStatus(document.getElementById('newsletter-status'), '', '');
+});
+document.getElementById('contact-form').addEventListener('input', function () {
+  setFormStatus(document.getElementById('contact-status'), '', '');
+});
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -219,6 +300,6 @@ function checkInput(inputID) {
 
 window.onbeforeunload = function () {
     if (isNameChanged || isEmailChanged || isSubjectChanged || isMessageChanged) {
-        return "Bu sayfadan ayrılmak istediğinize emin misiniz?";
+        return "You have unsent changes in the contact form. Are you sure you want to leave?";
     }
 };

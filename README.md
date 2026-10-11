@@ -1,23 +1,38 @@
-# GameStorm — Gaming Studio Landing Page
+<h1 align="center">GameStorm — Gaming Studio Landing Page</h1>
 
-**A long-form gaming studio landing page with a hero slider, feature blocks, testimonials and store CTAs.**
+<p align="center"><b>A long-form gaming studio landing page with a hero slider, feature blocks, testimonials and store CTAs.</b></p>
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-mister2314.github.io/Final--Project-2ea44f?style=flat-square&logo=vercel&logoColor=white)](https://mister2314.github.io/Final-Project/)
+<p align="center">
+[![Live Demo](https://img.shields.io/badge/Live_Demo-▶-2ea44f?style=for-the-badge&logo=vercel&logoColor=white)](https://mister2314.github.io/Final-Project/)
 ![HTML5](https://img.shields.io/badge/HTML5-e34f26?style=flat-square&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572b6?style=flat-square&logoColor=white)
 ![Vanilla JS](https://img.shields.io/badge/Vanilla_JS-f7df1e?style=flat-square&logoColor=white)
+</p>
+
+<p align="center">[**Live demo**](https://mister2314.github.io/Final-Project/) · [Quick start](#quick-start) · [Features](#features) · [Architecture](#architecture) · [FAQ](#faq)</p>
 
 <p align="center">
   <a href="https://mister2314.github.io/Final-Project/">
-    <img src="docs/preview.png" alt="GameStorm — Gaming Studio Landing Page — desktop preview" width="100%">
+    <img src="docs/demo.gif" alt="GameStorm — Gaming Studio Landing Page — animated demo" width="88%">
   </a>
 </p>
+
+<p align="center"><sub>Live capture of the real build — 111 KB, loops forever.</sub></p>
 
 ## Overview
 
 A full-length marketing page for a fictional game studio — the kind of page that has to hold attention across ten scroll lengths without losing its rhythm.
 
 It covers the whole landing-page vocabulary: a hero slider, an about block, a feature grid, an office gallery, a team section, Instagram-style social proof, testimonials and app-store download buttons. Layout is CSS grid and flexbox throughout, with a JavaScript-driven slider in the hero.
+
+## At a glance
+
+| Field | Detail |
+| --- | --- |
+| **Type** | Static site — no build step |
+| **Primary language** | HTML |
+| **Live demo** | [mister2314.github.io/Final-Project](https://mister2314.github.io/Final-Project/) |
+| **Repository** | [Mister2314/Final-Project](https://github.com/Mister2314/Final-Project) |
 
 ## Features
 
@@ -38,25 +53,30 @@ It covers the whole landing-page vocabulary: a hero slider, an about block, a fe
 | Logic | Vanilla JavaScript slider |
 | Deploy | GitHub Pages |
 
+## Architecture
+
+```mermaid
+flowchart LR
+  A["Browser"] --> B["Markup<br/>HTML5"] --> C["Styling<br/>CSS3 (grid"] --> D["Logic<br/>Vanilla JavaScript slider"] --> E["Deploy<br/>GitHub Pages"] --> F["Deploy"]
+```
+
 ## Screenshots
 
 | Desktop | Mobile |
 | :---: | :---: |
 | <img src="docs/preview.png" alt="Desktop view"> | <img src="docs/preview-mobile.png" alt="Mobile view" width="230"> |
 
-## Getting Started
-
-No build step and no dependencies — clone the repo and open the entry file, or serve the folder locally:
+## Quick Start
 
 ```bash
 git clone https://github.com/Mister2314/Final-Project.git
 cd Final-Project
 
-# Option 1 — open it directly
+# open it directly
 start index.html      # Windows
 open  index.html      # macOS
 
-# Option 2 — serve it locally
+# or serve the folder
 npx serve .
 ```
 

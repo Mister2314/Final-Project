@@ -3,13 +3,13 @@
 <p align="center"><b>A long-form gaming studio landing page with a hero slider, feature blocks, testimonials and store CTAs.</b></p>
 
 <p align="center">
-[![Live Demo](https://img.shields.io/badge/Live_Demo-▶-2ea44f?style=for-the-badge&logo=vercel&logoColor=white)](https://mister2314.github.io/Final-Project/)
-![HTML5](https://img.shields.io/badge/HTML5-e34f26?style=flat-square&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572b6?style=flat-square&logoColor=white)
-![Vanilla JS](https://img.shields.io/badge/Vanilla_JS-f7df1e?style=flat-square&logoColor=white)
+<a href="https://mister2314.github.io/Final-Project/"><img src="https://img.shields.io/badge/Live_Demo-2ea44f?style=flat-square&logo=vercel&logoColor=white" alt="Live demo" height="28"></a>
+<img src="https://img.shields.io/badge/HTML5-e34f26?style=flat-square" alt="HTML5" height="20">
+<img src="https://img.shields.io/badge/CSS3-1572b6?style=flat-square" alt="CSS3" height="20">
+<img src="https://img.shields.io/badge/Vanilla_JS-f7df1e?style=flat-square" alt="Vanilla JS" height="20">
 </p>
 
-<p align="center">[**Live demo**](https://mister2314.github.io/Final-Project/) · [Quick start](#quick-start) · [Features](#features) · [Architecture](#architecture) · [FAQ](#faq)</p>
+<p align="center"><a href="https://mister2314.github.io/Final-Project/"><b>Live demo</b></a> &nbsp;·&nbsp; <a href="#quick-start">Quick start</a> &nbsp;·&nbsp; <a href="#features">Features</a> &nbsp;·&nbsp; <a href="#architecture">Architecture</a> &nbsp;·&nbsp; <a href="#faq">FAQ</a></p>
 
 <p align="center">
   <a href="https://mister2314.github.io/Final-Project/">
@@ -88,6 +88,35 @@ assets/css/style.css — layout and component styles
 assets/js/index.js — hero slider behaviour
 assets/img/ — section imagery
 ```
+
+## FAQ
+
+<details>
+<summary><b>Is GameStorm a real product?</b></summary>
+
+No — it is a fictional studio, and the page is a landing-page build. The point was to reproduce a full marketing-page structure by hand: ten sections, a hero slider, a gallery and testimonials, without a page builder.
+
+</details>
+
+<details>
+<summary><b>Why is the JavaScript so small?</b></summary>
+
+Because almost nothing here needs it. The only real behaviour is the hero slider; everything else is layout, and layout belongs in CSS.
+
+</details>
+
+<details>
+<summary><b>How do I change the content?</b></summary>
+
+Every section is plain markup in `index.html`. Text is not templated, so you edit it where it appears.
+
+</details>
+
+## Roadmap
+
+- [ ] Add `loading="lazy"` to the gallery images
+- [ ] Compress the larger PNGs to WebP
+- [ ] Add a reduced-motion path for the slider
 
 ## Notes
 

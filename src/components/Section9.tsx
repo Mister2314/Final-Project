@@ -10,7 +10,7 @@ export default function Section9() {
           <div className="s9-div1-box-container">
             <div className="s9-div1-box-top">
               <div data-aos="zoom-out" className="s9-div1-box-top-radiusbox">
-                <img src="./assets/img/testimonial-img-1 (1).png" alt="" />
+                <img src="./assets/img/testimonial-img-1 (1).png" alt="" width={80} height={80} loading="lazy" decoding="async" />
               </div>
             </div>
             <div data-aos="fade-up" className="s9-div1-box-star">

@@ -1,8 +1,8 @@
 const team = [
-  { img: './assets/img/team-members-1-5real.png', name: 'Esther Howard', role: 'Artist', y: true },
-  { img: './assets/img/team-members-2-4real.png', name: 'Dianne Russell', role: 'Animator', y: false },
-  { img: './assets/img/team-members-3-real.png', name: 'Marvin McKinney', role: 'Brand & Culture Manager', y: true },
-  { img: './assets/img/team-members-4-1-real.png', name: 'Kristin Watsonl', role: 'Developer', y: false },
+  { img: './assets/img/team-members-1-5real.webp', name: 'Esther Howard', role: 'Artist', y: true, w: 987, h: 1305 },
+  { img: './assets/img/team-members-2-4real.webp', name: 'Dianne Russell', role: 'Animator', y: false, w: 884, h: 1169 },
+  { img: './assets/img/team-members-3-real.webp', name: 'Marvin McKinney', role: 'Brand & Culture Manager', y: true, w: 850, h: 1124 },
+  { img: './assets/img/team-members-4-1-real.webp', name: 'Kristin Watsonl', role: 'Developer', y: false, w: 985, h: 1302 },
 ]
 
 export default function Section4() {
@@ -32,7 +32,7 @@ export default function Section4() {
         <div data-aos="fade-down" className="team-members-container">
           {team.map((m) => (
             <div className={`team-members-boxes${m.y ? ' team-members-y' : ''}`} key={m.name}>
-              <img src={m.img} alt="" />
+              <img src={m.img} alt={`${m.name}, ${m.role} at Gamestorm`} width={m.w} height={m.h} loading="lazy" decoding="async" />
               <div className="team-members-paragraph">
                 <h4 data-aos="fade-right">{m.name}</h4>
                 <p data-aos="fade-right">{m.role}</p>

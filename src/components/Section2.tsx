@@ -11,7 +11,7 @@ export default function Section2() {
     <section className="section2">
       <div className="section2-container">
         <div className="section2-left-box">
-          <img src="./assets/img/about-block-bg.png" alt="" />
+          <img src="./assets/img/about-block-bg.png" alt="" width={636} height={664} loading="lazy" decoding="async" />
           <div data-aos="fade-down" className="border-box-border">
             <div className="border-box">
               <h1 id="counter">0+</h1>

@@ -15,10 +15,10 @@ export default function Header() {
     <header>
       <div className="img-container">
         <div className="logo">
-          <img src="./assets/img/fav.png" alt="" />
+          <img src="./assets/img/fav.png" alt="" width={42} height={27} />
         </div>
         <div className="text-logo">
-          <img src="./assets/img/logo-text.png" alt="" />
+          <img src="./assets/img/logo-text.png" alt="" width={122} height={23} />
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
           <path

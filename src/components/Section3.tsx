@@ -12,10 +12,10 @@ const gridIcon =
   'M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z'
 
 const features = [
-  { img: './assets/img/section-3-photo-1-realll.png', cls: 'boxes1' },
-  { img: './assets/img/v-www1.png', cls: 'boxes3' },
-  { img: './assets/img/vvv-1.png', cls: 'boxes3' },
-  { img: './assets/img/viktor-moor-rocketraccoon-02.jpg', cls: 'boxes3' },
+  { img: './assets/img/section-3-photo-1-realll.webp', cls: 'boxes1' },
+  { img: './assets/img/v-www1.webp', cls: 'boxes3' },
+  { img: './assets/img/vvv-1.webp', cls: 'boxes3' },
+  { img: './assets/img/viktor-moor-rocketraccoon-02.webp', cls: 'boxes3' },
 ]
 
 function FeatureCard({ img, cls }: { img: string; cls: string }) {
@@ -47,7 +47,7 @@ function FeatureCard({ img, cls }: { img: string; cls: string }) {
           <div className="boxes1-rightbox2">
             <div className="boxes1-rightbox2-container">
               <div className="boxes1-rightbox2-leftbox">
-                <img src="./assets/img/section-3-photo-1-realll.png" alt="" />
+                <img src="./assets/img/section-3-photo-1-realll.webp" alt="" width={1920} height={2248} loading="lazy" decoding="async" />
               </div>
               <div className="boxes1-rightbox2-middlebox">
                 <div className="boxes1-rightbox2-middlebox-top">
@@ -76,9 +76,9 @@ function FeatureCard({ img, cls }: { img: string; cls: string }) {
             </div>
           </div>
           <div className="boxes1-rightbox2-rightbox2">
-            <img src="./assets/img/appstore-2-real.png" alt="" />
-            <img src="./assets/img/googleplay-real.png" alt="" />
-            <img src="./assets/img/amazon-real.png" alt="" />
+            <img src="./assets/img/appstore-2-real.png" alt="" width={277} height={86} loading="lazy" decoding="async" />
+            <img src="./assets/img/googleplay-real.webp" alt="" width={720} height={224} />
+            <img src="./assets/img/amazon-real.png" alt="" width={277} height={87} loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -123,8 +123,8 @@ export default function Section3() {
         ))}
       </div>
       <div className="boxes-box">
-        <img src="./assets/img/section3-bg-consol-real.png" alt="" className="joystick1" />
-        <img src="./assets/img/section3-bg-consol-real.png" alt="" className="joystick2" />
+        <img src="./assets/img/section3-bg-consol-real.webp" alt="" className="joystick1" width={1920} height={1346} loading="lazy" decoding="async" />
+        <img src="./assets/img/section3-bg-consol-real.webp" alt="" className="joystick2" width={1920} height={1346} loading="lazy" decoding="async" />
         <div data-aos="fade-up" className="boxes-container">
           <FeatureCard {...features[0]} />
         </div>

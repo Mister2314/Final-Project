@@ -1,56 +1,87 @@
-/* Minimal replication of the AOS 2.3.1 styles used by this site
-   (fade-zoom-in, fade-up/down/right, zoom-out/in, zoom-in-left/right, flip-up),
-   including the ease-in-back easing used with data-aos-easing. */
+/* Gamestorm reveal system — one motion language for every section.
+   Rhythm tokens (directed-motion pacing map):
+   - default: 0.6s expo-like ease for content reveals
+   - data-aos-duration="900|1050": hero + headline beats
+   - data-aos-delay steps: 0 / 100 / 200 / 300
+   Easing vocabulary: cubic-bezier(0.22, 1, 0.36, 1) for arrivals
+   (expo-out analogue), ease-in-back kept for the hero's staged zoom. */
 
 [data-aos] {
   transition-property: transform, opacity;
-  transition-duration: 400ms;
-  transition-timing-function: ease;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-aos][data-aos-duration='900'] {
+  transition-duration: 900ms;
+}
+[data-aos][data-aos-duration='1050'] {
+  transition-duration: 1050ms;
 }
 [data-aos][data-aos-easing='ease-in-back'] {
   transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 [data-aos='fade-zoom-in'] {
-  transform: scale3d(0.6, 0.6, 0.6);
+  transform: scale3d(0.94, 0.94, 0.94);
   opacity: 0;
 }
 [data-aos='fade-up'] {
-  transform: translate3d(0, 100px, 0);
+  transform: translate3d(0, 48px, 0);
   opacity: 0;
 }
 [data-aos='fade-down'] {
-  transform: translate3d(0, -100px, 0);
+  transform: translate3d(0, -48px, 0);
   opacity: 0;
 }
 [data-aos='fade-right'] {
-  transform: translate3d(-100px, 0, 0);
+  transform: translate3d(-48px, 0, 0);
   opacity: 0;
 }
 [data-aos='fade-left'] {
-  transform: translate3d(100px, 0, 0);
+  transform: translate3d(48px, 0, 0);
   opacity: 0;
 }
 [data-aos='zoom-out'] {
-  transform: scale(1.2);
+  transform: scale(1.08);
   opacity: 0;
 }
 [data-aos='zoom-in'] {
-  transform: scale(0.6);
+  transform: scale(0.92);
   opacity: 0;
 }
 [data-aos='zoom-in-right'] {
-  transform: translate3d(100px, 0, 0) scale(0.6);
+  transform: translate3d(48px, 0, 0) scale(0.95);
   opacity: 0;
 }
 [data-aos='zoom-in-left'] {
-  transform: translate3d(-100px, 0, 0) scale(0.6);
+  transform: translate3d(-48px, 0, 0) scale(0.95);
   opacity: 0;
 }
 [data-aos='flip-up'] {
-  transform: perspective(2500px) rotateX(-100deg);
+  transform: perspective(2500px) rotateX(-12deg);
   opacity: 0;
 }
 [data-aos].aos-animate {
   transform: perspective(2500px) translateZ(0) rotateX(0deg) scale3d(1, 1, 1) scale(1);
   opacity: 1;
+}
+
+/* Mobile: shorter travel so rhythm reads on small screens */
+@media (max-width: 768px) {
+  [data-aos='fade-up'] { transform: translate3d(0, 28px, 0); }
+  [data-aos='fade-down'] { transform: translate3d(0, -28px, 0); }
+  [data-aos='fade-right'] { transform: translate3d(-28px, 0, 0); }
+  [data-aos='fade-left'] { transform: translate3d(28px, 0, 0); }
+  [data-aos='zoom-in-right'] { transform: translate3d(28px, 0, 0) scale(0.95); }
+  [data-aos='zoom-in-left'] { transform: translate3d(-28px, 0, 0) scale(0.95); }
+}
+
+/* Reduced motion: the static page is the complete page.
+   No transforms, no churn — content is simply visible. */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos],
+  [data-aos].aos-animate {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
 }

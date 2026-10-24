@@ -2,12 +2,12 @@ import { scrollToSection } from '../hooks'
 export default function Section10() {
   return (
     <section className="section10">
-      <img className="s10-bg1" src="./assets/img/s-10bg1.png" alt="" />
-      <img className="s10-bg2" src="./assets/img/s10-bg2.png" alt="" />
+      <img className="s10-bg1" src="./assets/img/s-10bg1.png" alt="" width={561} height={368} loading="lazy" decoding="async" />
+      <img className="s10-bg2" src="./assets/img/s10-bg2.png" alt="" width={313} height={355} loading="lazy" decoding="async" />
       <div className="s10-container">
         <div className="s10-leftbox">
           <div data-aos="zoom-in" className="s10-leftbox-img-container">
-            <img src="./assets/img/s10-leftbox-img.png" alt="" />
+            <img src="./assets/img/s10-leftbox-img.png" alt="" width={425} height={447} loading="lazy" decoding="async" />
           </div>
         </div>
         <div className="s10-rightbox">

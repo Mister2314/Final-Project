@@ -20,21 +20,21 @@ export default function Section7() {
       <div className="s7-div2">
         <div className="s7-div2-photo1">
           <div data-aos="zoom-out" className="s7-div2-photo1-photos-1">
-            <img src="./assets/img/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg" alt="" />
+            <img src="./assets/img/alex-kotliarskyi-QBpZGqEMsKg-unsplash.webp" alt="" width={1920} height={1280} loading="lazy" decoding="async" />
           </div>
           <div data-aos="zoom-out" className="s7-div2-photo1-photos-2">
-            <img src="./assets/img/copernico-PXilGoBofu8-unsplash.jpg" alt="" />
+            <img src="./assets/img/copernico-PXilGoBofu8-unsplash.webp" alt="" width={1920} height={1280} loading="lazy" decoding="async" />
           </div>
         </div>
         <div className="s7-div2-photo2">
           <div data-aos="zoom-out" className="s7-div2-photo2-photos photo1">
-            <img src="./assets/img/annie-spratt-sggw4-qDD54-unsplash.jpg" alt="" />
+            <img src="./assets/img/annie-spratt-sggw4-qDD54-unsplash.webp" alt="" width={1920} height={1315} loading="lazy" decoding="async" />
           </div>
           <div data-aos="zoom-out" className="s7-div2-photo2-photos photo2">
-            <img src="./assets/img/tim-van-der-kuip-CPs2X8JYmS8-unsplash.jpg" alt="" />
+            <img src="./assets/img/tim-van-der-kuip-CPs2X8JYmS8-unsplash.webp" alt="" width={1920} height={1280} loading="lazy" decoding="async" />
           </div>
           <div data-aos="zoom-out" className="s7-div2-photo2-photos photo3">
-            <img src="./assets/img/cherrydeck-rMILC1PIwM0-unsplash.jpg" alt="" />
+            <img src="./assets/img/cherrydeck-rMILC1PIwM0-unsplash.webp" alt="" width={1920} height={1243} loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

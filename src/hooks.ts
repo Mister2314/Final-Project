@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 
 /**
- * Minimal AOS 2.3.1 replication (duration 400ms, once: false).
+ * Minimal AOS replication (once: true, reveal rhythm tokens).
  * data-aos-offset="0" elements trigger on any intersection; the rest use the
- * AOS default offset of 120px.
+ * AOS default offset of 120px. Elements animate once and stay revealed.
  */
 export function useAos(): void {
   useEffect(() => {
@@ -17,19 +17,23 @@ export function useAos(): void {
     })
 
     const ioDefault = new IntersectionObserver(
-      (entries) => {
+      (entries, obs) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('aos-animate')
-          else entry.target.classList.remove('aos-animate')
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate')
+            obs.unobserve(entry.target)
+          }
         })
       },
       { root: null, rootMargin: '0px 0px -120px 0px', threshold: 0 },
     )
     const ioZero = new IntersectionObserver(
-      (entries) => {
+      (entries, obs) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('aos-animate')
-          else entry.target.classList.remove('aos-animate')
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate')
+            obs.unobserve(entry.target)
+          }
         })
       },
       { root: null, rootMargin: '0px', threshold: 0 },

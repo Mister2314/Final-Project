@@ -85,13 +85,13 @@ export default function Section12() {
               <h3 data-aos="fade-up">Instagram Posts</h3>
               <div className="post-icon-container">
                 <div data-aos="fade-right" className="post-icons">
-                  <img src="./assets/img/instagram-img-1.png" alt="" />
+                  <img src="./assets/img/instagram-img-1.png" alt="" width={60} height={60} loading="lazy" decoding="async" />
                 </div>
                 <div data-aos="fade-right" className="post-icons">
-                  <img src="./assets/img/instagram-img-2.png" alt="" />
+                  <img src="./assets/img/instagram-img-2.png" alt="" width={60} height={60} loading="lazy" decoding="async" />
                 </div>
                 <div data-aos="fade-right" className="post-icons">
-                  <img src="./assets/img/instagram-img-3.png" alt="" />
+                  <img src="./assets/img/instagram-img-3.png" alt="" width={60} height={60} loading="lazy" decoding="async" />
                 </div>
               </div>
             </div>

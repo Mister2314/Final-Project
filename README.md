@@ -6,9 +6,20 @@ A long-form landing page for a fictional game studio: hero slider, feature block
 
 <div align="center">
 
+<img src="docs/demo.gif" alt="GameStorm — Gaming Studio Landing Page — animated demo" width="700">
+
 | Desktop | Mobile |
 |---|---|
 | <img src="docs/shot-desktop.png" alt="Desktop view" width="700"> | <img src="docs/shot-mobile.png" alt="Mobile view" width="290"> |
+
+<details>
+<summary>More screenshots</summary>
+
+| Desktop | Mobile |
+|---|---|
+| <img src="docs/preview.png" alt="Desktop, alternate view" width="700"> | <img src="docs/preview-mobile.png" alt="Mobile, alternate view" width="290"> |
+
+</details>
 
 </div>
 

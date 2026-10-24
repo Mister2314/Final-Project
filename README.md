@@ -1,10 +1,16 @@
-# GameStorm — Gaming Studio Landing Page
+﻿# GameStorm — Gaming Studio Landing Page
 
 A long-form landing page for a fictional game studio: hero slider, feature blocks, gallery, team, testimonials and store CTAs.
 
 **Live demo:** https://mister2314.github.io/Final-Project/
 
-<img src="docs/preview.png" alt="GameStorm screenshot" width="380">
+<div align="center">
+
+| Desktop | Mobile |
+|---|---|
+| <img src="docs/shot-desktop.png" alt="Desktop view" width="700"> | <img src="docs/shot-mobile.png" alt="Mobile view" width="290"> |
+
+</div>
 
 ## What it does
 

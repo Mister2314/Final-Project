@@ -992,7 +992,7 @@ border-radius: 7px;
     position: relative;
     width: 100%;
     height: 400vh;
-    background-image: url('../img/section-3bg-real.png');
+    background-image: url('/assets/img/section-3bg-real.png');
 background-size: cover;
     background-repeat: no-repeat; 
     background-color: #222434;
@@ -1575,7 +1575,7 @@ margin: 30px 10px 0 0;
 .section7::before{
     position: absolute;
     content: "";
-    background-image: url(../img/life-at-gamestorm.png);
+    background-image: url(/assets/img/life-at-gamestorm.png);
     background-size: auto;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -1938,7 +1938,7 @@ padding:1px 0 0 5px;
     width: 100%;
     height: 94%;
     opacity: .2;
-    background-image: url('../img/s9-10bg.png');
+    background-image: url('/assets/img/s9-10bg.png');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -2483,7 +2483,7 @@ transition: all .4s ease;
     align-items: center;
     width: 50%;
     height:83vh;
-    background-image:url('../img/Screenshot\ 2023-08-17\ 230423.png' ) ;
+    background-image:url('/assets/img/Screenshot 2023-08-17 230423.png' );
     background-repeat:no-repeat;
     background-size: cover;
     object-fit: cover;
@@ -2708,3 +2708,5 @@ border-radius:32px 32px 0 0 ;
 .footer-text svg{
     transform: translateY(6px);
 }
+
+

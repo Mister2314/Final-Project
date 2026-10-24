@@ -1,8 +1,8 @@
-﻿# GameStorm — Gaming Studio Landing Page
+# GameStorm — Gaming Studio Landing Page
 
 A long-form landing page for a fictional game studio: hero slider, feature blocks, gallery, team, testimonials and store CTAs.
 
-**Live demo:** https://mister2314.github.io/Final-Project/
+**Live demo:** https://final-project-mister2314.vercel.app/
 
 <div align="center">
 
@@ -18,7 +18,7 @@ A full marketing-page structure built by hand across ten sections — about, fea
 
 ## Tech stack
 
-HTML · CSS · Vanilla JS
+React 19 · TypeScript · Vite
 
 ## Features
 

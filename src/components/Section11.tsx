@@ -1,21 +1,30 @@
+import { useState, type FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
 import { useFormDirtyGuard } from '../hooks'
 
-function SendMail() {
-  const params = {
-    name_id: (document.getElementById('name_id') as HTMLInputElement).value,
-    email_id: (document.getElementById('email_id') as HTMLInputElement).value,
-    subject: (document.getElementById('subject') as HTMLInputElement).value,
-    message: (document.getElementById('message') as HTMLTextAreaElement).value,
-  }
-  emailjs.send('service_2gz7a1z', 'template_vwf7v3v', params, 'jiBeXM6uAI-ZEhXCi').then(function (res) {
-    alert('Success!' + res.status)
-    location.reload()
-  })
-}
-
 export default function Section11() {
   const { onInput } = useFormDirtyGuard()
+  const [sending, setSending] = useState(false)
+  const [status, setStatus] = useState({ kind: '', message: '' })
+  async function sendMail(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const form = event.currentTarget
+    if (sending || !form.reportValidity()) return
+    const params = Object.fromEntries(['name_id', 'email_id', 'subject', 'message'].map(id =>
+      [id, (form.querySelector(`#${id}`) as HTMLInputElement).value.trim()]))
+    setSending(true)
+    setStatus({ kind: '', message: '' })
+    try {
+      await emailjs.send('service_2gz7a1z', 'template_vwf7v3v', params, 'jiBeXM6uAI-ZEhXCi')
+      form.reset()
+      Object.keys(params).forEach(id => onInput(id, ''))
+      setStatus({ kind: 'success', message: "Thanks! Your message has been sent. We'll get back to you soon." })
+    } catch {
+      setStatus({ kind: 'error', message: 'Sorry, something went wrong. Please try again in a moment.' })
+    } finally {
+      setSending(false)
+    }
+  }
   return (
     <section id="Contact" className="section11">
       <div className="s11-container">
@@ -67,7 +76,7 @@ export default function Section11() {
         </div>
         <div className="s11-rightbox">
           <div data-aos="zoom-out" className="form-container">
-            <div className="form-box">
+            <form id="contact-form" className="form-box" onSubmit={sendMail} onInput={() => setStatus({ kind: '', message: '' })}>
               <div data-aos="fade-up" className="form1">
                 <label> Name</label>
                 <br />
@@ -112,11 +121,12 @@ export default function Section11() {
                 />
               </div>
               <div data-aos="zoom-out" className="button-box">
-                <button onClick={SendMail} className="button3">
-                  Send Message
+                <button type="submit" disabled={sending} className="button3">
+                  {sending ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
-            </div>
+              <div id="contact-status" className={`form-status ${status.kind}`} aria-live="polite">{status.message}</div>
+            </form>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { scrollToSection } from '../hooks'
 const shapes = [
   { value: '500M', text: 'Downloads, or 6% of the world’s population.' },
   { value: '2M', text: 'Our games have over 20 million unique daily users.' },
@@ -47,7 +48,7 @@ export default function Section2() {
                 </div>
               ))}
               <div data-aos="zoom-out" className="animation-button-box">
-                <button className="animation-button">Explore Our Games</button>
+                <button type="button" onClick={() => scrollToSection('#Games')} className="animation-button">Explore Our Games</button>
               </div>
             </div>
           </div>

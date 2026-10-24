@@ -1,3 +1,4 @@
+import { scrollToSection } from '../hooks'
 export default function Section10() {
   return (
     <section className="section10">
@@ -25,8 +26,8 @@ export default function Section10() {
               </p>
             </div>
             <div data-aos="fade-up" className="s10-buttons">
-              <button className="button1">Explore Our Games</button>
-              <button className="button2">Join Now Our Community</button>{' '}
+              <button type="button" onClick={() => scrollToSection('#Games')} className="button1">Explore Our Games</button>
+              <button type="button" onClick={() => scrollToSection('#Contact')} className="button2">Join Now Our Community</button>{' '}
             </div>
           </div>
         </div>

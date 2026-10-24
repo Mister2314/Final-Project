@@ -42,8 +42,7 @@ export default function Hero() {
           <div className="text-container">
             <h2>Building Gaming Worlds</h2>
             <h1>We Craft Games</h1>
-            <a
-              href="#"
+            <span
               className="typewrite"
               data-period="2000"
               data-type='[ "Entertain", "Games", "Joy", "Games" ]'

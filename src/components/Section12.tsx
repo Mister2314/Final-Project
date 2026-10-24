@@ -1,3 +1,5 @@
+import { useState, type FormEvent } from 'react'
+import emailjs from '@emailjs/browser'
 const socials = [
   {
     name: 'Facebook',
@@ -21,6 +23,28 @@ const PIN_PATH =
   'M12 12q.825 0 1.413-.588T14 10q0-.825-.588-1.413T12 8q-.825 0-1.413.588T10 10q0 .825.588 1.413T12 12Zm0 7.35q3.05-2.8 4.525-5.088T18 10.2q0-2.725-1.738-4.462T12 4Q9.475 4 7.737 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35ZM12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2q3.175 0 5.588 2.225T20 10.2q0 2.5-1.988 5.438T12 22Zm0-12Z'
 
 export default function Section12() {
+  const [sending, setSending] = useState(false)
+  const [status, setStatus] = useState({ kind: '', message: '' })
+  async function subscribe(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const form = event.currentTarget
+    if (sending || !form.reportValidity()) return
+    const email = (form.querySelector('input') as HTMLInputElement).value.trim()
+    setSending(true)
+    setStatus({ kind: '', message: '' })
+    try {
+      await emailjs.send('service_2gz7a1z', 'template_vwf7v3v', {
+        name_id: 'Newsletter subscriber', email_id: email, subject: 'Newsletter subscription',
+        message: 'Please add ' + email + ' to the Gamestorm newsletter mailing list.'
+      }, 'jiBeXM6uAI-ZEhXCi')
+      form.reset()
+      setStatus({ kind: 'success', message: 'Your subscription request has been sent.' })
+    } catch {
+      setStatus({ kind: 'error', message: "Sorry, we couldn't subscribe you right now. Please try again." })
+    } finally {
+      setSending(false)
+    }
+  }
   return (
     <section className="section12">
       <div className="s12-boxes-container">
@@ -75,12 +99,15 @@ export default function Section12() {
               Stay Updated With News On All <br /> Our Games
             </h3>
             <p data-aos="fade-up">
-              Want to be the first to know about new releases? <br /> Subscribe out newsletter!
+              Want to be the first to know about new releases? <br /> Subscribe to our newsletter!
             </p>
-            <input data-aos="fade-up" type="text" placeholder="Enter Your Email" />
-            <div data-aos="fade-up" className="button4-box">
-              <button className="button4">Send Message</button>{' '}
-            </div>
+            <form id="newsletter-form" onSubmit={subscribe} onInput={() => setStatus({ kind: '', message: '' })}>
+              <input id="newsletter_email" data-aos="fade-up" type="email" placeholder="Enter Your Email" required />
+              <div data-aos="fade-up" className="button4-box">
+                <button type="submit" disabled={sending} className="button4">{sending ? 'Subscribing...' : 'Subscribe'}</button>
+              </div>
+            </form>
+            <div id="newsletter-status" className={`form-status newsletter-status ${status.kind}`} aria-live="polite">{status.message}</div>
             <div className="s12-rightbox-container-posts">
               <h3 data-aos="fade-up">Instagram Posts</h3>
               <div className="post-icon-container">

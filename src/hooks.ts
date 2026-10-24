@@ -52,8 +52,8 @@ export function useAos(): void {
 }
 
 /** Faithful port of the original TxtType typewriter (assets/js/index.js). */
-export function useTypewriter(words: string[], period = 2000): React.RefObject<HTMLAnchorElement | null> {
-  const ref = useRef<HTMLAnchorElement | null>(null)
+export function useTypewriter(words: string[], period = 2000): React.RefObject<HTMLSpanElement | null> {
+  const ref = useRef<HTMLSpanElement | null>(null)
   useEffect(() => {
     const el = ref.current
     if (!el) return
@@ -211,7 +211,7 @@ export function useFormDirtyGuard(): { onInput: (id: string, value: string) => v
       const d = dirty.current
       if (d.name || d.email || d.subject || d.message) {
         e.preventDefault()
-        e.returnValue = 'Bu sayfadan ayrılmak istediğinize emin misiniz?'
+        e.returnValue = 'You have unsent changes in the contact form. Are you sure you want to leave?'
         return e.returnValue
       }
     }
@@ -224,4 +224,11 @@ export function useFormDirtyGuard(): { onInput: (id: string, value: string) => v
       dirty.current[key as keyof typeof dirty.current] = Boolean(value)
     },
   }
+}
+
+export function scrollToSection(selector: string) {
+  const target = document.querySelector(selector)
+  if (!target) return
+  const offset = document.querySelector('header')?.offsetHeight || 0
+  window.scrollTo({ top: Math.max(target.getBoundingClientRect().top + window.scrollY - offset, 0), behavior: 'smooth' })
 }
